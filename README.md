@@ -1,4 +1,4 @@
-# PoECalendar
+# PoE Race Calendar
 Simple C# program to parse the json data returned from api.pathofexile.com. <br />
 Specifically designed to generate an ics file with all current events.
 
