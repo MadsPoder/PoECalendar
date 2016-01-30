@@ -5,4 +5,4 @@ Specifically designed to generate an iCal file with all current events.
 It uses the [JSON.net](http://www.newtonsoft.com/json) library.
 
 
-You can download it [here](https://raw.githubusercontent.com/MadsPoder/PoECalender/master/PoERaces.ics). I recommend making a secondary calender because of the rather large amount of events.
+You can download the calender [here](https://raw.githubusercontent.com/MadsPoder/PoECalender/master/PoERaces.ics). I recommend making a secondary calender because of the rather large amount of events.
