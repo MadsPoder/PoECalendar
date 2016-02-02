@@ -30,7 +30,6 @@ namespace PoECalendar
             foreach (dynamic race in races)
             {
                 DateTime dtStart = Convert.ToDateTime(race.startAt);
-                
                 string newStartDate = dtStart.ToString("yyyyMMdd");
                 string newStartTime = dtStart.ToString("HHmmss");
                 string newStart = newStartDate + "T" + newStartTime +"Z";
