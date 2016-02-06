@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+//The script has no error handling, so it shouldn't really be used as is.
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
