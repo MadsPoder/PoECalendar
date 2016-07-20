@@ -1,14 +1,8 @@
-//The script has no error handling, so it shouldn't really be used as is.
-using Newtonsoft.Json;
+//The script has no error handling, so it shouldn't really be used as is for other purposes. 
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 
 namespace PoECalendar
 {
@@ -16,8 +10,8 @@ namespace PoECalendar
     {
         static void Main(string[] args)
         {
-            StreamWriter fs = new System.IO.StreamWriter("PoERaces.ics");
-            fs.WriteLine("BEGIN:VCALENDAR\nPRODID:-//PoECalender//www.pathofexile.com/seasons//EN\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH");
+            StreamWriter fs = new System.IO.StreamWriter("PoEMedallionRaceSeason.ics");
+            fs.WriteLine("BEGIN:VCALENDAR\nPRODID:-//PoECalender//www.pathofexile.com/seasons/index/season/Medallion//EN\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH");
             string jsonData;
             WebRequest rawJsonData = WebRequest.Create("http://api.pathofexile.com/leagues?type=event&compact=1");
             WebResponse response = rawJsonData.GetResponse();
@@ -26,11 +20,12 @@ namespace PoECalendar
                 jsonData = reader.ReadToEnd();
             }
             JArray jsonVal = JArray.Parse(jsonData) as JArray;
-            dynamic races = jsonVal;
 
-            foreach (dynamic race in races)
+            foreach (dynamic race in jsonVal)
             {
+
                 DateTime dtStart = Convert.ToDateTime(race.startAt);
+                
                 string newStartDate = dtStart.ToString("yyyyMMdd");
                 string newStartTime = dtStart.ToString("HHmmss");
                 string newStart = newStartDate + "T" + newStartTime +"Z";
@@ -41,7 +36,8 @@ namespace PoECalendar
                 string newEnd = newEndDate + "T" + newEndTime + "Z";
 
                 string uid = race.url;
-                uid = uid.Substring(uid.LastIndexOf("/")+1,(uid.Length-uid.LastIndexOf("/"))-1);
+                if((uid != null))
+                    uid = uid.Substring(uid.LastIndexOf("/") + 1, (uid.Length - uid.LastIndexOf("/")) - 1);
 
                 fs.WriteLine("\nBEGIN:VEVENT\nDTSTART:" + newStart + "\nDTEND:" + newEnd + "\nLOCATION:Wraeclast\nSUMMARY:" + race.id + "\nDESCRIPTION:" + race.url + "\nUID:" + uid + newStart + newEnd + "\nTRANSP:OPAQUE\nACTION:DISPLAY\nPRIORITY:0\nCLASS:PRIVATE\nEND:VEVENT");
             }
