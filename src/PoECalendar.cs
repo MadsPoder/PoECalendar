@@ -10,7 +10,7 @@ namespace PoECalendar
     {
         static void Main(string[] args)
         {
-            StreamWriter fs = new System.IO.StreamWriter("PoEMedallionRaceSeason.ics");
+            StreamWriter fs = new System.IO.StreamWriter("InBetweenSeasonRaces.ics");
             fs.WriteLine("BEGIN:VCALENDAR\nPRODID:-//PoECalender//www.pathofexile.com/seasons/index/season/Medallion//EN\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH");
             string jsonData;
             WebRequest rawJsonData = WebRequest.Create("http://api.pathofexile.com/leagues?type=event&compact=1");
