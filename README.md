@@ -14,3 +14,4 @@ If you for some reason want the calendar for old events, they're available for d
 * ~~Soulthirst~~<br />
 * [Bloodgrip](https://raw.githubusercontent.com/MadsPoder/PoECalendar/master/calendars/Bloodgrip.ics).<br />
 * [Emberwake](https://raw.githubusercontent.com/MadsPoder/PoECalendar/master/calendars/Emberwake.ics).<br />
+
