@@ -6,7 +6,7 @@ I recommend making a secondary calendar because of the rather large amount of ev
 It uses the [JSON.net](http://www.newtonsoft.com/json) library.
 <br />
 You can download the calendar for the newest race season below <br />
-[Weekend of Races](https://raw.githubusercontent.com/MadsPoder/PoECalendar/master/calendars/WeekendOfRaces.ics)
+<br /> [Weekend of Races](https://raw.githubusercontent.com/MadsPoder/PoECalendar/master/calendars/WeekendOfRaces.ics)
 
 <br />
 If you for some reason want the calendar for old events, they're available for download below.
